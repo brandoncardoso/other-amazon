@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+
+    "name": "Other Amazon",
+    "description": "Quickly check other Amazon locales to compare prices and find reviews.",
+    "author": "Brandon Cardoso",
+
+    "version": "0",
+
+    "browser_action": {
+        "default_icon": "icons/icon32.png",
+        "default_popup": "popup.html",
+        "default_title": "Check another Amazon!"
+    },
+    "permissions": [
+        "activeTab",
+        "https://ajax.googleapis.com/"
+    ]
+}
