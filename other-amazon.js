@@ -29,22 +29,41 @@ function getAsin() {
   return asin
 }
 
+function goToOtherAmazon(form) {
+  var otherAmazonUrl = '//www.amazon.' +
+    form.querySelector('#tld-select').value +
+    window.location.pathname
+  window.location = otherAmazonUrl
+}
+
 function createForm(currentTld) {
   var form = document.createElement('form')
+  form.name = 'other-amazon-form'
+
   var asin = getAsin()
 
-  if (asin) {
-    var select = document.createElement('select')
-    for (var key in ALL_TLDS) {
-      if (ALL_TLDS[key].tld !== currentTld) {
-        var option = document.createElement('option')
-        option.value = ALL_TLDS[key].tld
-        option.text = ALL_TLDS[key].text
-        select.appendChild(option)
-      }
-    }
-    form.appendChild(select)
+  if (!asin) {
+    return
   }
+
+  var select = document.createElement('select')
+  select.id = 'tld-select'
+  for (var key in ALL_TLDS) {
+    if (ALL_TLDS[key].tld !== currentTld) {
+      var option = document.createElement('option')
+      option.value = ALL_TLDS[key].tld
+      option.text = ALL_TLDS[key].text
+      select.appendChild(option)
+    }
+  }
+  form.appendChild(select)
+
+  var submitButton = document.createElement('input')
+  submitButton.type = 'button'
+  submitButton.name = 'other-amazon-submit-button'
+  submitButton.value = 'Go'
+  submitButton.onclick = function () { goToOtherAmazon(form) }
+  form.appendChild(submitButton)
 
   return form
 }
