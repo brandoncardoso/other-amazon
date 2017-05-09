@@ -24,6 +24,9 @@
       ],
       "js": [
         "other-amazon.js"
+      ],
+      "css": [
+        "style.css"
       ]
     }
   ],

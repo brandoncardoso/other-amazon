@@ -50,7 +50,7 @@ function createForm(currentTld) {
 
   var label = document.createElement('label')
   label.setAttribute('for', tldSelectElemId)
-  label.innerHTML = 'Check another Amazon for more reviews and to compare prices: '
+  label.innerHTML = 'Check another Amazon for more reviews and to compare prices.'
   form.appendChild(label)
 
   var tldSelect = document.createElement('select')
