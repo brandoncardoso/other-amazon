@@ -46,17 +46,24 @@ function createForm(currentTld) {
     return
   }
 
-  var select = document.createElement('select')
-  select.id = 'tld-select'
+  var tldSelectElemId = 'tld-select'
+
+  var label = document.createElement('label')
+  label.setAttribute('for', tldSelectElemId)
+  label.innerHTML = 'Check another Amazon for more reviews and to compare prices: '
+  form.appendChild(label)
+
+  var tldSelect = document.createElement('select')
+  tldSelect.id = tldSelectElemId
   for (var key in ALL_TLDS) {
     if (ALL_TLDS[key].tld !== currentTld) {
       var option = document.createElement('option')
       option.value = ALL_TLDS[key].tld
       option.text = ALL_TLDS[key].text
-      select.appendChild(option)
+      tldSelect.appendChild(option)
     }
   }
-  form.appendChild(select)
+  form.appendChild(tldSelect)
 
   var submitButton = document.createElement('input')
   submitButton.type = 'button'
