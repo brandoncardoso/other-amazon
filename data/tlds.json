@@ -1,0 +1,58 @@
+{
+  "com": {
+    "text": "USA - Amazon.com",
+    "tld": "com"
+  },
+  "ca": {
+    "text": "Canada - Amazon.ca",
+    "tld": "ca"
+  },
+  "com.mx": {
+    "text": "Mexico - Amazon.com.mx",
+    "tld": "com.mx"
+  },
+  "fr": {
+    "text": "France - Amazon.fr",
+    "tld": "fr"
+  },
+  "de": {
+    "text": "Germany - Amazon.de",
+    "tld": "de"
+  },
+  "it": {
+    "text": "Italy - Amazon.it",
+    "tld": "it"
+  },
+  "nl": {
+    "text": "Netherlands - Amazon.nl",
+    "tld": "nl"
+  },
+  "es": {
+    "text": "Spain - Amazon.es",
+    "tld": "es"
+  },
+  "uk": {
+    "text": "UK - Amazon.uk",
+    "tld": "uk"
+  },
+  "cn": {
+    "text": "China - Amazon.cn",
+    "tld": "cn"
+  },
+  "in": {
+    "text": "India - Amazon.cn",
+    "tld": "in"
+  },
+  "co.jp": {
+    "text": "Japan - Amazon.co.jp",
+    "tld": "co.jp"
+  },
+  "com.au": {
+    "text": "Australia - Amazon.com.au",
+    "tld": "com.au"
+  },
+  "com.br": {
+    "text": "Brazil - Amazon.com.br",
+    "tld": "com.br"
+  }
+}

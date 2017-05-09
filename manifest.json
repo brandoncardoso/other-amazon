@@ -1,19 +1,38 @@
 {
-    "manifest_version": 2,
-
-    "name": "Other Amazon",
-    "description": "Quickly check other Amazon locales to compare prices and find reviews.",
-    "author": "Brandon Cardoso",
-
-    "version": "0",
-
-    "browser_action": {
-        "default_icon": "icons/icon32.png",
-        "default_popup": "popup.html",
-        "default_title": "Check another Amazon!"
-    },
-    "permissions": [
-        "activeTab",
-        "https://ajax.googleapis.com/"
-    ]
+  "name": "Other Amazon",
+  "description": "Quickly check other Amazon locales to compare prices and find reviews.",
+  "author": "Brandon Cardoso",
+  "version": "0",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.com/gp/*",
+        "*://*.amazon.ca/gp/*",
+        "*://*.amazon.com.mx/gp/*",
+        "*://*.amazon.fr/gp/*",
+        "*://*.amazon.de/gp/*",
+        "*://*.amazon.it/gp/*",
+        "*://*.amazon.nl/gp/*",
+        "*://*.amazon.es/gp/*",
+        "*://*.amazon.uk/gp/*",
+        "*://*.amazon.cn/gp/*",
+        "*://*.amazon.in/*",
+        "*://*.amazon.co.jp/gp/*",
+        "*://*.amazon.com.au/gp/*",
+        "*://*.amazon.com.br/gp/*"
+      ],
+      "js": [
+        "other-amazon.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon32.png",
+    "default_title": "Check another Amazon!"
+  },
+  "web_accessible_resources": [
+    "data/tlds.json"
+  ],
+  "manifest_version": 2
 }
