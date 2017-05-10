@@ -29,11 +29,11 @@ function getAsin() {
   return asin
 }
 
-function goToOtherAmazon(form) {
+function openOtherAmazon(form) {
   var otherAmazonUrl = '//www.amazon.' +
     form.querySelector('#tld-select').value +
     window.location.pathname
-  window.location = otherAmazonUrl
+  window.open(otherAmazonUrl, '_blank')
 }
 
 function createForm(currentTld) {
@@ -69,7 +69,7 @@ function createForm(currentTld) {
   submitButton.type = 'button'
   submitButton.name = 'other-amazon-submit-button'
   submitButton.value = 'Go'
-  submitButton.onclick = function () { goToOtherAmazon(form) }
+  submitButton.onclick = function () { openOtherAmazon(form) }
   form.appendChild(submitButton)
 
   return form
