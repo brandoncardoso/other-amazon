@@ -1,16 +1,9 @@
 var ALL_TLDS = {}
 
-var request = new XMLHttpRequest()
-var url = chrome.runtime.getURL('/data/tlds.json')
-request.open("GET", url, true)
-request.send(null)
-request.onreadystatechange = function() {
-  if (request.readyState != 4) {
-    return
-  }
-  ALL_TLDS = Object.freeze(JSON.parse(request.responseText))
+chrome.runtime.sendMessage('getAllTlds', function(allTlds) {
+  ALL_TLDS = allTlds
   injectForm()
-}
+})
 
 /////
 

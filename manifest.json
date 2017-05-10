@@ -4,6 +4,9 @@
   "author": "Brandon Cardoso",
   "version": "0",
   "permissions": [],
+  "background": {
+      "scripts": ["background.js"]
+  },
   "content_scripts": [
     {
       "matches": [
