@@ -25,7 +25,8 @@ function getAsin() {
 function openOtherAmazon(form) {
   var otherAmazonUrl = '//www.amazon.' +
     form.querySelector('#tld-select').value +
-    window.location.pathname
+    window.location.pathname +
+    window.location.search
   window.open(otherAmazonUrl, '_blank')
 }
 
