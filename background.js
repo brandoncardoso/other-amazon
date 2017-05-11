@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         sendResponse(JSON.parse(request.responseText))
       }
     }
-    /* This function becomes invalid when the event listener returns,
+    /* The sendResponse function becomes invalid when the event listener returns,
      * unless you return true from the event listener to indicate you wish to send a response asynchronously
      *
      * https://developer.chrome.com/extensions/runtime#event-onMessage
