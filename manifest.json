@@ -1,11 +1,20 @@
 {
+  "manifest_version": 2,
   "name": "Other Amazon",
-  "description": "Quickly check other Amazon locales to compare prices and find reviews.",
+  "description": "Quickly check other Amazon locales to find more reviews and compare prices.",
   "author": "Brandon Cardoso",
-  "version": "0",
-  "permissions": ["storage"],
+  "version": "1.0.0",
+  "icons": {
+      "32": "icons/icon32.png"
+  },
+  "permissions": [
+      "storage"
+  ],
   "background": {
-      "scripts": ["background.js"]
+      "scripts": [
+          "background.js"
+      ],
+      "persistent": false
   },
   "options_ui": {
       "page": "options.html",
@@ -43,6 +52,5 @@
   },
   "web_accessible_resources": [
     "data/tlds.json"
-  ],
-  "manifest_version": 2
+  ]
 }
