@@ -2,9 +2,9 @@ var ALL_TLDS = {}
 var OPTIONS = {}
 
 chrome.runtime.sendMessage('getAllTlds', function(allTlds) {
-  ALL_TLDS = allTlds
   chrome.runtime.sendMessage('getOptions', function(options) {
-    OPTIONS = options
+    ALL_TLDS = Object.freeze(allTlds)
+    OPTIONS = Object.freeze(options)
     injectForm()
   })
 })

@@ -4,15 +4,12 @@ var DEFAULT_OPTIONS = {}
 document.addEventListener('DOMContentLoaded', init)
 function init() {
   chrome.runtime.sendMessage('getAllTlds', function(allTlds) {
-    ALL_TLDS = allTlds
-
-    DEFAULT_OPTIONS = Object.freeze({
-      openInNewTab: true,
-      enabledTlds: Object.keys(ALL_TLDS)
+    chrome.runtime.sendMessage('getDefaultOptions', function(defaultOptions) {
+      ALL_TLDS = Object.freeze(allTlds)
+      DEFAULT_OPTIONS = Object.freeze(defaultOptions)
+      generateForm()
+      restoreOptions()
     })
-
-    generateForm()
-    restoreOptions()
   })
 }
 
