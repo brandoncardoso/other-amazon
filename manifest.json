@@ -14,20 +14,20 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.amazon.com/gp/*",
-        "*://*.amazon.ca/gp/*",
-        "*://*.amazon.com.mx/gp/*",
-        "*://*.amazon.fr/gp/*",
-        "*://*.amazon.de/gp/*",
-        "*://*.amazon.it/gp/*",
-        "*://*.amazon.nl/gp/*",
-        "*://*.amazon.es/gp/*",
-        "*://*.amazon.co.uk/gp/*",
-        "*://*.amazon.cn/gp/*",
+        "*://*.amazon.com/*",
+        "*://*.amazon.ca/*",
+        "*://*.amazon.com.mx/*",
+        "*://*.amazon.fr/*",
+        "*://*.amazon.de/*",
+        "*://*.amazon.it/*",
+        "*://*.amazon.nl/*",
+        "*://*.amazon.es/*",
+        "*://*.amazon.co.uk/*",
+        "*://*.amazon.cn/*",
         "*://*.amazon.in/*",
-        "*://*.amazon.co.jp/gp/*",
-        "*://*.amazon.com.au/gp/*",
-        "*://*.amazon.com.br/gp/*"
+        "*://*.amazon.co.jp/*",
+        "*://*.amazon.com.au/*",
+        "*://*.amazon.com.br/*"
       ],
       "js": [
         "other-amazon.js"

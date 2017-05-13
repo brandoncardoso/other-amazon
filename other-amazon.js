@@ -2,13 +2,15 @@ var ALL_TLDS = {}
 var OPTIONS = {}
 var TLD_SELECT_ELEM_ID = 'other-amazon-tld-select'
 
-chrome.runtime.sendMessage('getAllTlds', function(allTlds) {
-  chrome.runtime.sendMessage('getOptions', function(options) {
-    ALL_TLDS = Object.freeze(allTlds)
-    OPTIONS = Object.freeze(options)
-    injectForm()
+if (getAsin()) {
+  chrome.runtime.sendMessage('getAllTlds', function(allTlds) {
+    chrome.runtime.sendMessage('getOptions', function(options) {
+      ALL_TLDS = Object.freeze(allTlds)
+      OPTIONS = Object.freeze(options)
+      injectForm()
+    })
   })
-})
+}
 
 /////
 
@@ -43,13 +45,6 @@ function openOtherAmazon(form) {
 function createForm(currentTld) {
   var form = document.createElement('form')
   form.name = 'other-amazon-form'
-
-  var asin = getAsin()
-
-  if (!asin) {
-    return
-  }
-
 
   var label = document.createElement('label')
   label.setAttribute('for', TLD_SELECT_ELEM_ID)
