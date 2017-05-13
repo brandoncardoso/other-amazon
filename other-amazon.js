@@ -1,5 +1,6 @@
 var ALL_TLDS = {}
 var OPTIONS = {}
+var TLD_SELECT_ELEM_ID = 'other-amazon-tld-select'
 
 chrome.runtime.sendMessage('getAllTlds', function(allTlds) {
   chrome.runtime.sendMessage('getOptions', function(options) {
@@ -28,7 +29,7 @@ function getAsin() {
 
 function openOtherAmazon(form) {
   var otherAmazonUrl = '//www.amazon.' +
-    form.querySelector('#tld-select').value +
+    document.getElementById(TLD_SELECT_ELEM_ID).value +
     window.location.pathname +
     window.location.search
 
@@ -49,15 +50,14 @@ function createForm(currentTld) {
     return
   }
 
-  var tldSelectElemId = 'tld-select'
 
   var label = document.createElement('label')
-  label.setAttribute('for', tldSelectElemId)
+  label.setAttribute('for', TLD_SELECT_ELEM_ID)
   label.innerHTML = 'Check another Amazon for more reviews and to compare prices.'
   form.appendChild(label)
 
   var tldSelect = document.createElement('select')
-  tldSelect.id = tldSelectElemId
+  tldSelect.id = TLD_SELECT_ELEM_ID
   for (var i in OPTIONS.enabledTlds) {
     if (OPTIONS.enabledTlds[i] !== currentTld) {
       var option = document.createElement('option')
@@ -72,15 +72,15 @@ function createForm(currentTld) {
   submitButton.type = 'button'
   submitButton.name = 'other-amazon-submit-button'
   submitButton.value = 'Go'
-  submitButton.onclick = function () { openOtherAmazon(form) }
+  submitButton.onclick = openOtherAmazon
   form.appendChild(submitButton)
 
   return form
 }
 
 function insertForm(form) {
-  var centerCol = document.querySelector('#centerCol')
-  var firstHr = centerCol.querySelector('hr')
+  var centerCol = document.getElementById('centerCol')
+  var firstHr = centerCol.getElementsByTagName('hr')[0]
 
   centerCol.insertBefore(form, firstHr)
 }
