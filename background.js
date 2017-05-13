@@ -9,7 +9,7 @@ var ALL_TLDS = Object.freeze({
   "es": { "text": "Spain - Amazon.es", "tld": "es" },
   "co.uk": { "text": "UK - Amazon.co.uk", "tld": "co.uk" },
   "cn": { "text": "China - Amazon.cn", "tld": "cn" },
-  "in": { "text": "India - Amazon.cn", "tld": "in" },
+  "in": { "text": "India - Amazon.in", "tld": "in" },
   "co.jp": { "text": "Japan - Amazon.co.jp", "tld": "co.jp" },
   "com.au": { "text": "Australia - Amazon.com.au", "tld": "com.au" },
   "com.br": { "text": "Brazil - Amazon.com.br", "tld": "com.br" }
