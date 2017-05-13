@@ -1,8 +1,12 @@
 var ALL_TLDS = {}
+var OPTIONS = {}
 
 chrome.runtime.sendMessage('getAllTlds', function(allTlds) {
   ALL_TLDS = allTlds
-  injectForm()
+  chrome.runtime.sendMessage('getOptions', function(options) {
+    OPTIONS = options
+    injectForm()
+  })
 })
 
 /////
@@ -27,7 +31,12 @@ function openOtherAmazon(form) {
     form.querySelector('#tld-select').value +
     window.location.pathname +
     window.location.search
-  window.open(otherAmazonUrl, '_blank')
+
+  if (OPTIONS.openInNewTab) {
+    window.open(otherAmazonUrl, '_blank')
+  } else {
+    window.location.href = otherAmazonUrl
+  }
 }
 
 function createForm(currentTld) {
@@ -49,11 +58,11 @@ function createForm(currentTld) {
 
   var tldSelect = document.createElement('select')
   tldSelect.id = tldSelectElemId
-  for (var key in ALL_TLDS) {
-    if (ALL_TLDS[key].tld !== currentTld) {
+  for (var i in OPTIONS.enabledTlds) {
+    if (OPTIONS.enabledTlds[i] !== currentTld) {
       var option = document.createElement('option')
-      option.value = ALL_TLDS[key].tld
-      option.text = ALL_TLDS[key].text
+      option.value = ALL_TLDS[OPTIONS.enabledTlds[i]].tld
+      option.text = ALL_TLDS[OPTIONS.enabledTlds[i]].text
       tldSelect.appendChild(option)
     }
   }

@@ -3,9 +3,13 @@
   "description": "Quickly check other Amazon locales to compare prices and find reviews.",
   "author": "Brandon Cardoso",
   "version": "0",
-  "permissions": [],
+  "permissions": ["storage"],
   "background": {
       "scripts": ["background.js"]
+  },
+  "options_ui": {
+      "page": "options.html",
+      "chrome_style": false
   },
   "content_scripts": [
     {

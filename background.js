@@ -15,7 +15,13 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
      * https://developer.chrome.com/extensions/runtime#event-onMessage
      */
     return true 
-  } else  {
+  } else if (message == 'getOptions') {
+    chrome.storage.sync.get(null, function(options) {
+      sendResponse(options)
+    })
+    return true
+  } else {
     sendResponse({})
   }
 })
+

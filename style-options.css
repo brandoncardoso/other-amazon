@@ -1,0 +1,41 @@
+body {
+  text-align: center;
+  padding: 10px;
+}
+
+#save-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#save-status{
+  flex: 1;
+  text-align: center;
+}
+
+#save-button {
+  flex: 1;
+  height: 30px;
+}
+
+form[name="options"] label {
+  display: flex;
+  justify-content: space-between;
+}
+
+form[name="options"] label + label {
+  margin-top: 5px;
+}
+
+form[name="options"] #enabled-tlds-options {
+  margin-top: 10px;
+}
+
+form[name="options"] #enabled-tlds-options label:not(:first-child) {
+  margin-left: 20px;
+}
+
+form[name="options"] label {
+  border-bottom: 1px dotted #f0f0f0;
+}
